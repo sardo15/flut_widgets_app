@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:widgets_app/config/presentations/screens/home/home_screen.dart';
+import 'package:widgets_app/config/router/app_router.dart';
 import 'package:widgets_app/config/theme/app_theme.dart';
 
+import 'package:widgets_app/config/presentations/screens/home/home_screen.dart';
 import 'config/presentations/screens/buttons/buttons_screen.dart';
 import 'config/presentations/screens/cards/cards_screen.dart';
 
@@ -14,14 +15,24 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: appRouter,
       debugShowCheckedModeBanner: false,
       theme: AppTheme(selectedColor: 0).getTheme(),
+      
+      // basado en navigator and route names
+      /*
       home: const HomeScreen(),
       routes: {
         '/buttons':(context) => const ButtonsScreen(),
         '/cards':(context) => const CardsScreen(),
       },
+
+      */
+
+      //using Go Router
+
+
       );
   }
 }
